@@ -1,0 +1,101 @@
+<%- include("../_layouts/header") %>
+
+    <div class="row">
+        <h1>Đăng tin</h1>
+        <form method="POST" action="/tuyenDung/signUp">
+            <div class="form-group">
+                <p>Ngành nghề:</p>
+                <select name="nameNganh">
+                    <% pageNganh.forEach(function(index) { %>
+                        <option value="<%=index.nameNganh%>">
+                            <%=index.nameNganh%>
+                        </option>
+                        <% }) %>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Tên Công Ty:*</p>
+                <input type="text" name="nameCty" class="form-control" placeholder="Tên Công Ty" onkeyup="checkName()"/>
+                <span id="snameCty" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Vị trí tuyển dụng:*</p>
+                <input type="text" name="viTri" class="form-control" placeholder="Vị trí tuyển dụng" onkeyup="checkViTri()"/>
+                <span id="sviTri" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Yêu cầu:*</p>
+                <textarea onkeyup="checkYeuCau()" name="yeuCau" placeholder="Yêu cầu công việc" class="form-control"></textarea>
+                <span id="syeuCau" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Mô tả:</p>
+                <textarea name="moTa" placeholder="Mô tả công việc" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <p>Sđt:*</p>
+                <input onkeyup="checkSdt()" name="sdt" class="form-control" placeholder="Số điện thoại" />
+                <span id="ssdt" class="error"></span>
+            </div>
+            <button type="submit">Đăng tin</button>
+        </form>
+    </div>
+    <script>
+        function checkName() {
+            var name = document.getElementsByName("nameCty")[0].value;
+            if (name.length < 1) {
+                document.getElementById("snameCty").style.display = ""
+                document.getElementById("snameCty").innerHTML = "Vui lòng nhập tên công ty"
+                return false
+            }
+            else {
+                document.getElementById("snameCty").style.display = "none"
+                return true
+            }
+        }
+        function checkViTri() {
+            var i = document.getElementsByName("viTri")[0].value;
+            if (i.length < 3) {
+                document.getElementById("sviTri").style.display = ""
+                document.getElementById("sviTri").innerHTML = "Vui lòng nhập vị trí cần tuyển."
+                return false
+            }
+            else {
+                document.getElementById("sviTri").style.display = "none"
+                return true
+            }
+        }
+        function checkYeuCau() {
+            var gt = document.getElementsByName("yeuCau")[0].value;
+            if (gt.length < 10 ) {
+                document.getElementById("syeuCau").style.display = ""
+                document.getElementById("syeuCau").innerHTML = "Yêu cầu quá ngắn."
+                return false
+            }
+            else {
+                document.getElementById("syeuCau").style.display = "none"
+                return true
+            }
+        }
+        function checkSdt() {
+            var s= document.getElementsByName("sdt")[0].value;
+            if(s.length<10 || isNaN(s)){
+                document.getElementById("ssdt").style.display = ""
+                document.getElementById("ssdt").innerHTML = "Vui lòng nhập số điện thoại chính xác."
+                return false
+            }
+            else {
+                document.getElementById("ssdt").style.display = "none"
+                return true
+            }
+        }
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                if (checkName() == false || checkYeuCau() == false || checkViTri() == false || checkSdt() == false) {
+                    return false
+                }
+            });
+        })
+    </script>
+
+<%- include("../_layouts/footer") %>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="shortcut icon" type="image.jpg" href="/images/fav.png">
+    <link rel="stylesheet" href="/css/animate.css">
+    <link rel="stylesheet" href="/css/dropdown.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <title>Top Middleman</title>
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+    <!--------------------START WEBSITE------------------------->
+    <header>
+        <div class="container">
+            <div class="row" id="inner-header">
+                <!----------------------START NAVBAR------------------------->
+                <nav class="navbar navbar-expand-md">
+                    <!-- Brand -->
+                    <a class="wow animate__fadeInLeft navbar-brand" href="#"><img id="imglogo" src="/images/logo.png"></a>
+                    <form class="wow animate__fadeInLeft form-inline" action="#">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn" type="submit" action="#"><i class="fa fa-search"></i></button>
+                    </form>
+                    <!-- Toggler/collapsibe Button -->
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <!-- Navbar links -->
+                    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                        <div class="wow animate__fadeInDown navbar-nav ml-auto">
+                            <li class="nav-item" id="li1">
+                                <a class="nav-link" href="/">Home</a>
+                            </li>
+                            <li class="nav-item" id="li1">
+                                <a class="nav-link" href="/filter">Job-Search</a>
+                            </li>
+                            <% if (userlogin==null || userlogin=="") { %>
+                                <li class="nav-item" id="li1">
+                                    <a class="nav-link" href="/login">Log in</a>
+                                </li>
+                                <li class="nav-item" id="li1">
+                                    <a class="nav-link" href="/register">Register</a>
+                                </li>
+                            <% } else { %> 
+                                <% if (userloginNumber==1) { %> 
+                                    <li class="nav-item" id="li1">
+                                        <a class="nav-link" href="/tuyenDung">Tuyển dụng</a>
+                                    </li>
+                                <% } else if (userloginNumber==2){ %> 
+                                    <li class="nav-item" id="li1">
+                                        <a class="nav-link" href="/timViec">Tìm việc</a>
+                                    </li>
+                                <% } else { %>
+                                    <li class="nav-item" id="li1">
+                                        <a class="nav-link" href="/themNganh">Thêm ngành</a>
+                                    </li>
+                                <% } %> 
+
+                                <li class="nav-item" id="li1">
+                                    <a class="nav-link" href="/me">Hi,<%= userloginName  %> </a>
+                                </li>
+                                <li class="nav-item" id="li1">
+                                    <a class="nav-link" href="/logout">Log out</a>
+                                </li>
+                            <% } %> 
+                            
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!--------------------END NAVBAR------------------------->
+    </header>
+
+    <main>
+        <!----------------------START SLIDES--------------------->
+        <div class="container">
+
+            <a id="about"></a>
+            <div class="row" id="main1">
+                <!-- The slideshow -->
+                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img id="imslide" src="/images/slide1.jpg" alt="slider-01">
+                        </div>
+                    </div>
+                </div>
+                <div class="overlay-background"></div>
+                <!-----------------------END SLIDES---------------------->
+            </div>
+            <div class="row" id="main2">
+                <hr>
+                <i class="wow animate__fadeInLeft typewrite" data-type='["Job Connection","VietNam"]'></i>
+                <hr>
+            </div>
+            

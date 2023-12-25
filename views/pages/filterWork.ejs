@@ -1,0 +1,93 @@
+<%- include("../_layouts/header") %>
+<!-- Search Work -->
+
+<div class="row">
+    <div class="wow animate__fadeInDown col-sm-4 text-center" id="about4"><a>JOB-SEARCH</a></div>
+    <div class="wow animate__fadeInDown select-box col-sm-4">
+        <select name="nameNganh" class="selected">
+            <option value="all">Tất cả ngành</option>
+            <% pageNganh.forEach(function(index) { %> 
+            <option value="<%= index.nameNganh %>"><%= index.nameNganh %> </option>
+           <% }) %> 
+        </select>
+    </div>
+    <div class="wow animate__fadeInDown select-box col-sm-4">
+        <select name="nameNganh" class="selected">
+            <option value="all">Tất cả ngành</option>
+            <% pageNganh.forEach(function(index) { %> 
+            <option value="<%= index.nameNganh %>"><%= index.nameNganh %> </option>
+           <% }) %> 
+        </select>
+    </div>
+</div>
+<hr id="hr-work">
+<div id="nb" data-wow-duration="1s">
+    <div class="wow animate__fadeInUp row">
+        <% pageNganh.slice(0,3).forEach(function(index) { %>
+            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                <div class="card" id="nbvans">
+                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                    <div class="overlay text-center">
+                        <div class="title"><%= index.nameNganh %> </div>
+                        <div class="info"><%= index.info  %> </div>
+                    </div>
+                </div>
+            </a>
+        <% }) %> 
+    </div>
+    <div class="wow animate__fadeInUp row">
+        <% pageNganh.slice(3,6).forEach(function(index) { %> 
+            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                <div class="card" id="nbvans">
+                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                    <div class="overlay text-center">
+                        <div class="title"><%= index.nameNganh %> </div>
+                        <div class="info"><%= index.info  %> </div>
+                    </div>
+                </div>
+            </a>
+        <% }) %> 
+    </div>
+    <div class="wow animate__fadeInUp row">
+        <% pageNganh.slice(6,9).forEach(function(index) { %> 
+            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                <div class="card" id="nbvans">
+                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                    <div class="overlay text-center">
+                        <div class="title"><%= index.nameNganh %> </div>
+                        <div class="info"><%= index.info  %> </div>
+                    </div>
+                </div>
+            </a>
+        <% }) %> 
+    </div>
+    <div class="wow animate__fadeInUp row">
+        <% pageNganh.slice(9,12).forEach(function(index) { %> 
+            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                <div class="card" id="nbvans">
+                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                    <div class="overlay text-center">
+                        <div class="title"><%= index.nameNganh %> </div>
+                        <div class="info"><%= index.info  %> </div>
+                    </div>
+                </div>
+            </a>
+        <% }) %> 
+    </div>
+    <div class="wow animate__fadeInUp row">
+        <% pageNganh.slice(12,15).forEach(function(index) { %> 
+            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                <div class="card" id="nbvans">
+                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                    <div class="overlay text-center">
+                        <div class="title"><%= index.nameNganh %> </div>
+                        <div class="info"><%= index.info  %> </div>
+                    </div>
+                </div>
+            </a>
+        <% }) %> 
+    </div>
+</div>
+
+
+<%- include("../_layouts/footer") %>

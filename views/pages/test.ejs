@@ -1,0 +1,160 @@
+
+    <div class="container">
+        <!-- chi tiết -->
+        <div class="tren">
+            <div class="row">
+                <div class="col-lg-3 col-md-3">
+                    <img src="trungquan.jpg" />
+                </div>
+                <div class="col-lg-9 col-md-9">
+                    <h1>cmmm</h1>
+                    <p><i class="fas fa-hotel"></i> aloaalla</p>
+                    <br>
+                    <p><i class="fab fa-ethereum"></i>buibi</p>
+                    <br>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6">
+                            <p><i class="fas fa-calendar-alt"></i>buibi</p>
+                        </div>
+
+
+                        <div class="col-lg-6 col-md-6">
+                            <p><i class="fas fa-calendar-alt"></i>buibi</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+        </head>
+
+
+        <div class="tab">
+            <button class="tablinks " onclick="openCity(event, 'London')" id="defaultOpen">London</button>
+            <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
+            <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
+        </div>
+
+        <div id="London" class="tabcontent">
+            <h3>London</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <h3 class="fas fa-hand-holding-usd"></h3>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            Mức lương(USD)<br>$900
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <h3 class="fas fa-layer-group"></h3>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            Cấp độ nghề nghiệp<br>Nhân viên
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <h3 class="fas fa-suitcase"></h3>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            Kinh Nghiệm<br>3-5 năm
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <h3 class="fas fa-user"></i></h3>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            Giới tính<br>Nam
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <h3 class="fas fa-map-marker-alt"></h3>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            Khu vực<br>TP.HCM
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <div class="row">
+                        <div class="col-lg-2 col-md-2">
+                            <h3 class="fas fa-shield-virus"></h3>
+                        </div>
+                        <div class="col-lg-10 col-md-10">
+                            Lĩnh vực<br>Sản xuất
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <br>
+            <h3>Mô tả công việc</h3>
+            <h4>cbajsbcsuyabcyu</h4>
+            <ul>
+                <li>hbyu</li>
+                <li>hbyu</li>
+                <li>hbyu</li>
+                <li>hbyu</li>
+                <li>hbyu</li>
+            </ul>
+
+            <br>
+            <h3>yêu cầu</h3>
+            <ul>
+                <li>hbyu</li>
+                <li>hbyu</li>
+                <li>hbyu</li>
+                <li>hbyu</li>
+                <li>hbyu</li>
+            </ul>
+        </div>
+    
+
+    <div id="Paris" class="tabcontent">
+        <h3>Paris</h3>
+        <p>Paris is the capital of France.</p>
+    </div>
+
+    <div id="Tokyo" class="tabcontent">
+        <h3>Tokyo</h3>
+        <p>Tokyo is the capital of Japan.</p>
+    </div>
+    </div>
+    <script>
+        function openCity(evt, cityName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+        document.getElementById("defaultOpen").click();
+    </script>
+
+
+</body>
+
+</html>

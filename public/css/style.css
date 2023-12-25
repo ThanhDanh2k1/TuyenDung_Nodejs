@@ -1,0 +1,443 @@
+body {
+    background-color: #fff;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid #f5f5f5;
+    padding: 10px 0px;
+    transition: all 0.5s ease-in-out;
+    z-index: 3;
+}
+
+#main1 {
+    z-index: 1;
+    position: relative;
+}
+
+#main2 {
+    justify-content: space-between;
+    align-items: center;
+    width: 97.6%;
+    margin-left: 4px;
+    z-index: 2;
+    position: relative;
+    margin-top: -42.9px;
+}
+
+.btn {
+    background-color: #f5f5f5;
+    color: #65768e;
+}
+
+header.sticky {
+    background: #f5f5f5;
+    padding: 5px 0px;
+}
+
+header.sticky #logo {
+    color: #000;
+}
+
+header.sticky .navbar button {
+    background-color: #65768e;
+    color: rgb(255, 255, 255);
+}
+
+header.sticky .navbar a {
+    color: #000;
+}
+
+.inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo {
+    color: #fff;
+    text-decoration: uppercase;
+    display: block;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.navbar a {
+    text-transform: uppercase;
+    padding: 10px 20px;
+    color: #fff;
+    display: block;
+}
+
+
+/*-------------START NAVBAR--------------*/
+
+.navbar-brand {
+    width: 35%;
+}
+
+#imglogo {
+    width: 50%;
+    margin-top: -10px;
+    margin-bottom: -20px;
+    margin-left: 20px;
+    display: block;
+}
+
+#li1 {
+    margin-top: 5px;
+    font-family: monospace;
+    font-size: 120%;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+#li1 a {
+    color: #65768e;
+}
+
+#li1 a:hover {
+    color: rgb(0, 0, 0);
+    border-radius: 2px;
+}
+
+.navbar-toggler {
+    float: right;
+    font-size: 50%;
+}
+
+#nbvans button {
+    font-size: 100%;
+}
+
+.form-inline input {
+    font-size: 75%;
+    margin-left: -200px;
+    margin-top: 10px;
+}
+
+.form-inline button {
+    font-size: 74.5%;
+    margin-top: 10.5px;
+    margin-left: -5px;
+}
+
+
+/*-------------END NAVBAR--------------*/
+
+
+/*--------------START SLIDES---------------*/
+
+#main1 img {
+    border-radius: 5px;
+}
+
+#imslide {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*-------------END SLIDES--------------*/
+
+
+/*----------REPONSIVE----------*/
+
+@media (max-width: 992px) {
+    /*-----nav-----*/
+    .navbar-toggler {
+        float: right;
+        font-size: 50%;
+    }
+    .navbar {
+        margin-top: -10px;
+        margin-bottom: -30%;
+    }
+    #li1 {
+        font-size: 80%;
+        margin-top: 15px;
+    }
+    #li2 {
+        font-size: 80%;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    /*-----nav-----*/
+    .navbar {
+        margin-top: -10px;
+        margin-bottom: -40%;
+    }
+    #imglogo {
+        width: 35%;
+        margin-top: -15px;
+        margin-bottom: -20px;
+        margin-left: 20px;
+    }
+    .form-inline input {
+        font-size: 35%;
+        margin-left: -150px;
+        margin-top: 10px;
+    }
+    .form-inline button {
+        font-size: 35%;
+        margin-top: 10px;
+        margin-left: -5px;
+    }
+    .navbar-toggler {
+        float: right;
+        font-size: 50%;
+        margin-top: 5px;
+    }
+    #li1 {
+        font-size: 50%;
+        margin-bottom: -30px;
+        margin-left: 10px;
+        margin-right: -15px;
+    }
+    #li2 {
+        font-size: 50%;
+        margin-top: 15px;
+        margin-left: 10px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .navbar-toggler {
+        float: right;
+        font-size: 30%;
+        margin-top: 10px;
+    }
+    .navbar {
+        margin-top: -10px;
+        margin-bottom: -50%;
+    }
+    .form-inline input {
+        font-size: 1px;
+        margin-left: -140px;
+        margin-top: 10px;
+    }
+    .form-inline button {
+        font-size: 1px;
+        margin-top: 10px;
+        margin-left: 2xpx;
+    }
+    #li1 {
+        font-size: 35%;
+        margin-bottom: -30px;
+        margin-left: 20px;
+    }
+    #li2 {
+        font-size: 35%;
+        margin-top: 15px;
+        margin-left: 20px;
+    }
+}
+
+
+/*---HOME---*/
+
+#about {
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 155%;
+    margin-top:5px
+}
+
+#thisbox {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+    margin-left: 1px;
+    margin-top: 10px;
+    ;
+}
+
+#box {
+    border: 1px solid #ccc;
+}
+
+#box h5 {
+    font-family: monospace;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+#about1 {
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 155%;
+    margin-top: 15px;
+    margin-bottom: -10px;
+}
+
+#about2 {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 155%;
+}
+
+#about3 {
+    border: none;
+    right: 4px;
+}
+
+#about3 button {
+    color: #000;
+    border: solid 0.2px rgba(0, 0, 0, 0.178);
+    outline: none;
+    box-shadow: none;
+}
+
+#about3 button:hover {
+    color: rgb(255, 255, 255);
+}
+
+#about4 {
+    text-align: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 155%;
+    margin-top: 10px;
+    margin-bottom: -20px;
+    left: 150px;
+}
+
+#hr-work {
+    margin-top: -0.1px;
+}
+
+
+/*----CSS CARD-BODY HOMEPAGE-----*/
+
+#founder img {
+    display: block;
+    width: 100%;
+    border-radius: 3%;
+}
+
+#founder .overlay {
+    position: absolute;
+    top: 1.5%;
+    left: 1.5%;
+    width: 97%;
+    height: 97%;
+    background: rgba(51, 51, 51, 0.521);
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.75s;
+    backdrop-filter: blur(2.5px);
+    border-radius: 2%;
+}
+
+#founder .title {
+    font-size: 130%;
+    font-weight: bold;
+    padding: 10px;
+}
+
+#founder .info {
+    font-size: 95%;
+    color: rgb(230, 230, 230);
+    padding: 0px 50px;
+}
+
+#founder .overlay>* {
+    transform: translateY(10px);
+    transition: transform 0.5s;
+}
+
+#founder .overlay:hover>* {
+    transform: translateY(0px);
+}
+
+#founder .overlay:hover {
+    opacity: 1;
+}
+
+#nbvans {
+    position: relative;
+    width: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 3%;
+}
+
+#nbvans .img-top {
+    border: none;
+    background-color: #42424200;
+}
+
+#nbvans .img-thumbnail {
+    border: none;
+}
+
+#nbvans .img-thumbnail {
+    border: none;
+}
+
+#founder img {
+    display: block;
+    width: 100%;
+    border-radius: 3%;
+}
+
+#founder .overlay {
+    left: 4px;
+    width: 97.9%;
+    height: 97%;
+}
+
+.btn-homepage {
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    border: none;
+    border-radius: 2px;
+}
+
+#nbvans button {
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+#work-hapdan {
+    background-color: rgb(185, 185, 185);
+}
+
+#work-hot1 {
+    background-color: #000;
+}
+
+#hr-home {
+    width: 99.4%;
+    margin-left: 4px;
+}
+.error
+{
+    color: red;
+}

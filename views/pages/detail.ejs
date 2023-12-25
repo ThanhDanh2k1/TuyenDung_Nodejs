@@ -1,0 +1,96 @@
+<%- include("../_layouts/header") %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3 col-md-3">
+            <img width="100%" src="/images/<%= pageNganh.imgSrc %> " />
+        </div>
+        <div class="col-lg-9 col-md-3">
+            <h1><%= pageNganh.nameNganh  %> </h1>
+            <h4>Cấp độ ngành nghề: <%= pageNganh.mucDo %> </h4>
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <h4>Lương thấp nhất: $$ <%= pageNganh.luongThap %> </h4>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <h4>Lương cao nhất: $$ <%= pageNganh.luongCao %> </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr width="100%">
+
+    <div class="row">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><h5>Giới thiệu</h5></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><h5>Tuyển dụng</h5></button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><h5>Tìm việc</h5></button>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                <h5><%= pageNganh.information %> </h5>
+            </div>
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Tên công ty</th>
+                        <th>Vị trí</th>
+                        <th>Yêu cầu</th>
+                        <th>Mô tả</th>
+                        <th>Số điện thoại</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% pageTD.forEach(function(index) { %> 
+                            <tr>
+                                <td> <%= index.nameCty %></td>
+                                <td> <%= index.viTri %>  </td>
+                                <td> <%= index.yeuCau %>  </td>
+                                <td> <%= index.moTa %>  </td>
+                                <td> 0<%= index.sdt %>  </td>
+                            </tr>
+                        <% }) %> 
+                    </tbody>
+                  </table>
+            </div>
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Họ-Tên</th>
+                        <th>Vị trí</th>
+                        <th>Giới thiệu</th>
+                        <th>Mức lương yêu cầu</th>
+                        <th>Điện thoại liên hệ</th>
+                        <th>Thời gian làm việc</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% pageTV.forEach(function(index) { %> 
+                            <tr>
+                                <td> <%= index.myName %></td>
+                                <td> <%= index.viTri %>  </td>
+                                <td> <%= index.gioiThieu %>  </td>
+                                <td>$$ <%= index.luong %>  </td>
+                                <td> 0<%= index.sdt %>  </td>
+                                <td> <%= index.time %>  </td>
+                            </tr>
+                        <% }) %> 
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+        
+    </div>
+
+</div>
+
+<%- include("../_layouts/footer") %>

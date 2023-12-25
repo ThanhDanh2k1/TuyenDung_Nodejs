@@ -1,0 +1,93 @@
+<%- include("../_layouts/header") %>
+
+<div class="row">
+    <h1>Cập nhật ngành <%=page.nameNganh%></h1>
+    <form method="POST" action="/themNganh/<%=page._id%>">
+        <div class="form-group">
+            <p>Cấp độ:</p>
+            <select name="mucDo">
+                <option value="thap">Thấp</option>
+                <option value="trungBinh">Trung Bình</option>
+                <option value="cao">Cao</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <p>Tóm gọn:</p>
+            <input type="text" value="<%= page.info %>" name="info" class="form-control" placeholder="tóm gọn" onkeyup="checkInfo()" />
+            <span id="sinfo" class="error"></span>
+        </div>
+        <div class="form-group">
+            <p>Giới thiệu:</p>
+            <textarea type="text" name="information" class="form-control" placeholder="Giới thiệu" onkeyup="checkGioiThieu()" ><%= page.information %> </textarea>
+            <span id="sgioithieu" class="error"></span>
+        </div>
+        <div class="form-group">
+            <p>Lương thấp nhất:</p>
+            <input type="number" value="<%= page.luongThap %>" name="luongThap" class="form-control" placeholder="Lương thấp nhất" onkeyup="checkLuong()" />
+        </div>
+        <div class="form-group">
+            <p>Lương cao nhất:</p>
+            <input type="number" value="<%= page.luongCao %>" name="luongCao" class="form-control" placeholder="Lương cao nhất"onkeyup="checkLuong()" />
+            <span id="sluong" class="error"></span>
+        </div>
+        <div class="form-group">
+            <p>hình ảnh:</p>
+            <input type="file" value="<%= page.imgSrc %>" name="imgSrc" class="form-control" />
+        </div>
+        <button type="submit">Cập nhật</button>
+    </form>
+</div>
+<script>
+    function checkInfo() {
+        var i = document.getElementsByName("info")[0].value;
+        console.log("dai " + i.length)
+        if (i.length < 5) {
+            document.getElementById("sinfo").style.display = ""
+            document.getElementById("sinfo").innerHTML = "Vui lòng nhập thông tin"
+            return false
+        }
+        else {
+            document.getElementById("sinfo").style.display = "none"
+            return true
+        }
+    }
+    function checkGioiThieu() {
+        var gt = document.getElementsByName("information")[0].value;
+        if (gt.length < 100) {
+            document.getElementById("sgioithieu").style.display = ""
+            document.getElementById("sgioithieu").innerHTML = "Mô tả quá ngắn."
+            return false
+        }
+        else {
+            document.getElementById("sgioithieu").style.display = "none"
+            return true
+        }
+    }
+    function checkLuong() {
+        var minximum = document.getElementsByName("luongThap")[0].value;
+        var maximum = document.getElementsByName("luongCao")[0].value;
+        console.log(minximum, maximum)
+        if(maximum.length<1 || minximum.length<1 ){
+            document.getElementById("sluong").style.display = ""
+            document.getElementById("sluong").innerHTML = "Vui lòng nhập lương cao nhất và thấp nhất ."
+            return false
+        }
+        if (parseInt(maximum) <= parseInt(minximum)) {
+            document.getElementById("sluong").style.display = ""
+            document.getElementById("sluong").innerHTML = "Lương cao nhất không được thấp hơn ."
+            return false
+        }
+        else {
+            document.getElementById("sluong").style.display = "none"
+            return true
+        }
+    }
+    $(document).ready(function () {
+        $("form").submit(function (event) {
+            if (checkInfo() == false || checkGioiThieu() == false || checkLuong() == false) {
+                return false
+            }
+        });
+    })
+</script>
+<%- include("../_layouts/footer") %>

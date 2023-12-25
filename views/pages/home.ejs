@@ -1,0 +1,131 @@
+<%- include("../_layouts/header") %>
+
+<!--Home-->
+<a id=hot></a>
+<div>
+    <div class="wow animate__fadeInDown" id="about">GIỚI THIỆU</div>
+    <div id="thisbox" class="wow animate__fadeInUp row">
+        <div id="box" class="col medium-3 small-6 large-3" data-animate="flipInY" data-animated="true">
+            <div class="col-inner text-center">
+                <div class="icon-box featured-box icon-box-center text-center">
+                    <div class="icon-box-text last-reset">
+                        <h5>THÀNH LẬP</h5>
+                        <p>Top Middleman được thành lập năm 2016. Qua hơn 5 năm hình thành và phát triển, mang đến cơ hội việc làm, kết nối nhà tuyển dụng với ứng viên</p>
+                    </div>
+                </div>
+                <!-- .icon-box -->
+            </div>
+        </div>
+        <div id="box" class="col medium-3 small-6 large-3" data-animate="flipInY" data-animated="true">
+            <div class="col-inner text-center">
+                <div class="icon-box featured-box icon-box-center text-center">
+                    <div class="icon-box-text last-reset">
+                        <h5>SỨ MỆNH</h5>
+                        <p>Mang đến cho khách hàng những giải pháp và sự lựa chọn tốt nhất, vì lợi ích của khách hàng, đối tác. Mang đến cất lượng hàng đầu tại Việt Nam.</p>
+                    </div>
+                </div>
+                <!-- .icon-box -->
+            </div>
+        </div>
+        <div id="box" class="col medium-3 small-6 large-3" data-animate="flipInY" data-animated="true">
+            <div class="col-inner text-center">
+
+                <div class="icon-box featured-box icon-box-center text-center">
+                    <div class="icon-box-text last-reset">
+
+                        <h5>TẦM NHÌN</h5>
+                        <p>Đưa Top Middleman trở thành một doanh nghiệp hàng đầu trong lĩnh vực tư vấn - kết nối việc làm. Đáp ứng nhu cầu cao nhất của khách hàng.
+                        </p>
+                    </div>
+                </div>
+                <!-- .icon-box -->
+            </div>
+        </div>
+        <div id="box" class="col medium-3 small-6 large-3" data-animate="flipInY" data-animated="true">
+            <div class="col-inner text-center">
+                <div class="icon-box featured-box icon-box-center text-center">
+                    <div class="icon-box-text last-reset">
+
+                        <h5>GIÁ TRỊ</h5>
+                        <p>Tôn trọng khách hàng và đối tác. Đề cao đổi mới tư duy, đổi mới chất lượng dịch vụ. Xây dựng môi trường chuyên nghiệp, đoàn kết, thân thiện.
+                        </p>
+                    </div>
+                </div>
+                <!-- .icon-box -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--VIỆC LÀM HOT-->
+<div>
+    <div class="wow animate__fadeInDown" id="about1">VIỆC LÀM HOT</div>
+    <div class="wow animate__fadeInUp" data-wow-duration="1s">
+        <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="row" id="hotwork">
+                        <!---PHẦN NÀY KHI CLICK BẤT KÌ VÀO HÌNH NÓ SẼ NHẢY VÔ XEM CHI TIẾT - DANH FIX LẠI NHA--->
+                        <% pageNganh.slice(3,6).forEach(function(index) { %> 
+                            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                                <div class="card" id="nbvans">
+                                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                                    <div class="overlay text-center">
+                                        <div class="title"><%= index.nameNganh %> </div>
+                                        <div class="info"><%= index.info  %> </div>
+                                    </div>
+                                </div>
+                            </a>
+                        <% }) %> 
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="row">
+                        <!---PHẦN NÀY KHI CLICK BẤT KÌ VÀO HÌNH NÓ SẼ NHẢY VÔ XEM CHI TIẾT - DANH FIX LẠI NHA--->
+                        <% pageNganh.slice(0,3).forEach(function(index) { %> 
+                            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                                <div class="card" id="nbvans">
+                                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                                    <div class="overlay text-center">
+                                        <div class="title"><%= index.nameNganh %> </div>
+                                        <div class="info"><%= index.info  %> </div>
+                                    </div>
+                                </div>
+                            </a>
+                        <% }) %> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr id="hr-home">
+
+<!---VIỆC LÀM MỚI-->
+<div>
+    <div class="row">
+        <div class="wow animate__fadeInDown col-sm-4"></div>
+        <div class="wow animate__fadeInDown col-sm-4 text-center" id="about2"><a>VIỆC LÀM MỚI</a></div>
+        <div class="wow animate__fadeInDown col-sm-4 text-right" id="about3">
+            <button class="btn btn-secondary" type="button" aria-haspopup="true" aria-expanded="false">
+                <a href="/filter">All Job-Search</a>
+            </button>
+        </div>
+    </div>
+    <div class="wow animate__fadeInUp" id="nb" data-wow-duration="1s">
+        <div class="row">
+            <% pageNganh.slice(0,3).forEach(function(index) { %> 
+            <a href="/filter/<%=index.nameNganh %>/detail" class="col-lg-4 col-md-4 col-sm-4 col-4" id="founder"> 
+                <div class="card" id="nbvans">
+                    <img class="img-top img-thumbnail" src="/images/<%= index.imgSrc %> "  alt="VANS">
+                    <div class="overlay text-center">
+                        <div class="title"><%= index.nameNganh %> </div>
+                        <div class="info"><%= index.info  %> </div>
+                    </div>
+                </div>
+            </a>
+            <% }) %> 
+        </div>
+    </div>
+</div>
+<%- include("../_layouts/footer") %>

@@ -1,0 +1,122 @@
+<%- include("../_layouts/header") %>
+
+    <div class="row">
+        <h1>Đăng tin tìm việc</h1>
+        <form method="POST" action="/timViec/signUp">
+            <div class="form-group">
+                <p>Ngành nghề:*</p>
+                <select name="nameNganh">
+                    <% pageNganh.forEach(function(index) { %>
+                        <option value="<%=index.nameNganh%>">
+                            <%=index.nameNganh%>
+                        </option>
+                        <% }) %>
+                </select>
+            </div>
+            <div class="form-group">
+                <p>Tên:*</p>
+                <input type="text" name="myName" class="form-control" placeholder="Họ và tên" onkeyup="checkName()"/>
+                <span id="sMyName" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Vị trí tuyển dụng:*</p>
+                <input type="text" name="viTri" class="form-control" placeholder="Vị trí tuyển dụng" onkeyup="checkViTri()"/>
+                <span id="sViTri" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Giới thiệu bản thân:*</p>
+                <textarea name="gioiThieu" placeholder="Giới thiệu bản thân" class="form-control" onkeyup="checkGioiThieu()"></textarea>
+                <span id="sGioiThieu" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Mức lương Tối thiểu:*</p>
+                <input type="number" name="luong" placeholder="Nhập mức lương tối thiểu" class="form-control"  onkeyup="checkLuong()"/>
+                <span id="sLuong" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Điện thoại liên hệ:*</p>
+                <input name="sdt" placeholder="Nhập số điện thoại" class="form-control"  onkeyup="checkSdt()"/>
+                <span id="sSdt" class="error"></span>
+            </div>
+            <div class="form-group">
+                <p>Thời gian làm việc:*</p>
+                <select name="time">
+                    <option value="partTime">Part-time</option>
+                    <option value="fullTime">Full-time</option>
+                </select>
+            </div>
+            <button type="submit">Đăng tin</button>
+        </form>
+    </div>
+    <script>
+        function checkName() {
+            var name = document.getElementsByName("myName")[0].value;
+            if (name.length < 1) {
+                document.getElementById("sMyName").style.display = ""
+                document.getElementById("sMyName").innerHTML = "Vui lòng nhập tên bạn"
+                return false
+            }
+            else {
+                document.getElementById("sMyName").style.display = "none"
+                return true
+            }
+        }
+        function checkViTri() {
+            var i = document.getElementsByName("viTri")[0].value;
+            console.log("dai " + i.length)
+            if (i.length < 3) {
+                document.getElementById("sViTri").style.display = ""
+                document.getElementById("sViTri").innerHTML = "Vui lòng nhập vị trí ứng tuyển"
+                return false
+            }
+            else {
+                document.getElementById("sViTri").style.display = "none"
+                return true
+            }
+        }
+        function checkGioiThieu() {
+            var gt = document.getElementsByName("gioiThieu")[0].value;
+            if (gt.length < 100) {
+                document.getElementById("sGioiThieu").style.display = ""
+                document.getElementById("sGioiThieu").innerHTML = "Giới thiệu bản thân chi tiết hơn."
+                return false
+            }
+            else {
+                document.getElementById("sGioiThieu").style.display = "none"
+                return true
+            }
+        }
+        
+        function checkLuong() {
+            var l = document.getElementsByName("luong")[0].value;
+            if (l.length < 1) {
+                document.getElementById("sLuong").style.display = ""
+                document.getElementById("sLuong").innerHTML = "Nhập mức lương mong muốn."
+                return false
+            }
+            else {
+                document.getElementById("sLuong").style.display = "none"
+                return true
+            }
+        }
+        function checkSdt() {
+            var s= document.getElementsByName("sdt")[0].value;
+            if(s.length<10 || isNaN(s)){
+                document.getElementById("sSdt").style.display = ""
+                document.getElementById("sSdt").innerHTML = "Vui lòng nhập số điện thoại chính xác."
+                return false
+            }
+            else {
+                document.getElementById("sSdt").style.display = "none"
+                return true
+            }
+        }
+        $(document).ready(function () {
+            $("form").submit(function (event) {
+                if (checkName() == false || checkViTri() == false || checkGioiThieu() == false || checkLuong() == false || checkSdt() == false) {
+                    return false
+                }
+            });
+        })
+    </script>
+    <%- include("../_layouts/footer") %>

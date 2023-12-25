@@ -1,0 +1,75 @@
+<%- include("../_layouts/header") %>
+
+<% if (userloginNumber==1) { %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ngành nghề</th>
+        <th>Tên công ty</th>
+        <th>Vị trí</th>
+        <th>Yêu cầu</th>
+        <th>Mô tả</th>
+        <th colspan="2">Số điện thoại</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% page.forEach(function(index) { %> 
+            <tr>
+                <td> <%= index.nameNganh %></td>
+                <td> <%= index.nameCty %></td>
+                <td> <%= index.viTri %>  </td>
+                <td> <%= index.yeuCau %>  </td>
+                <td> <%= index.moTa %>  </td>
+                <td> 0<%= index.sdt %>  </td>
+                <td> <a href="/tuyenDung/<%=index._id%>/edit">Sửa</a> <a href="/tuyenDung/<%=index._id%>/delete">Xóa</a> </td>
+            </tr>
+        <% }) %> 
+    </tbody>
+  </table>
+<% } else if (userloginNumber==2) { %>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ngành nghề</th>
+        <th>Vị trí</th>
+        <th>Giới thiệu</th>
+        <th>Mức lương</th>
+        <th>Số điện thoại</th>
+        <th colspan="2">Thời gian làm việc</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% page.forEach(function(index) { %> 
+            <tr>
+                <td> <%= index.nameNganh %></td>
+                <td> <%= index.viTri %>  </td>
+                <td> <%= index.gioiThieu %>  </td>
+                <td> <%= index.luong %>  </td>
+                <td> 0<%= index.sdt %>  </td>
+                <td> <%= index.time %>  </td>
+                <td> <a href="/timViec/<%=index._id%>/edit">Sửa</a> <a href="/timViec/<%=index._id%>/delete">Xóa</a> </td>
+            </tr>
+        <% }) %> 
+    </tbody>
+  </table>
+<% } else { %> 
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ngành nghề</th>
+        <th colspan="2">Thông tin</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% page.forEach(function(index) { %> 
+            <tr>
+                <td> <%= index.nameNganh %></td>
+                <td> <%= index.info %>  </td>
+                <td> <a href="/themNganh/<%=index._id%>/edit">Sửa</a> <a href="/themNganh/<%=index._id%>/delete">Xóa</a> </td>
+            </tr>
+        <% }) %> 
+    </tbody>
+  </table>
+<% } %> 
+
+<%- include("../_layouts/footer") %>
